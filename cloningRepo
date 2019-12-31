@@ -1,0 +1,6 @@
+Github cloning tool is faulty so i found these commands to make repos cloning
+
+git clone git@github.com:pacoogle/yourOldRepo.git
+cd reponame
+git remote add new-repo git@github.com:pacoogle/newRepo.git
+git push new-repo master
