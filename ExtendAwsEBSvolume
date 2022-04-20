@@ -1,0 +1,2 @@
+sudo growpart /dev/nvme0n1 1 //partition disk name
+sudo resize2fs /dev/root
