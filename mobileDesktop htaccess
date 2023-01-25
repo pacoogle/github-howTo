@@ -1,0 +1,17 @@
+# ROOT .htaccess rediretto su mobile o desktop in base al dispositivo
+RewriteEngine On
+
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+RewriteRule ^(.*)$ URL_TO_REDIRECT [R=301,L]
+
+RewriteRule ^(.*)$ URL_TO_REDIRECT [R=301]
+
+# MOBILE .htaccess se atterri su mobile ma hai un desktop -> atterra su mobile
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} "Windows|Macintosh|X11" [NC]
+RewriteRule ^(.*)$ URL_TO_REDIRECT [R=301,L]
+
+# DESKTOP .htaccess se atterri su desktop ma hai un mobile -> atterra su desktop
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+RewriteRule ^(.*)$ URL_TO_REDIRECT [R=301,L]
