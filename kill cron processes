@@ -1,0 +1,18 @@
+// search and remove
+pids=$(pgrep -af "COMMAND_NAME" | grep "COMMAND_NAME" | awk '{print $1}')
+if [ -z "$pids" ]; then
+      echo "No processes found matching the pattern '$PROCESS_PATTERN'."
+else
+    echo "Killing processes with PIDs: $pids"
+    for pid in $pids; do
+      kill -9 $pid
+    done
+fi
+
+// search and echoes
+pids=$(pgrep -af "COMMAND_NAME" | grep "COMMAND_NAME" | awk '{print $1}')
+if [ -z "$pids" ]; then
+      echo "No processes found matching the pattern '$PROCESS_PATTERN'."
+else
+    echo "Killing processes with PIDs: $pids"
+fi
